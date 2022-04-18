@@ -33,6 +33,8 @@ coordinator firmware. This should be done from your laptop/desktop/ a system sep
 Software Setup
 --------------
 
-#. Follow the instructions as-described in the Linux Zigbee2MQTT Setup Instructions.
+#. Follow the instructions as-described in the `Linux Zigbee2MQTT Setup Instructions <https://www.zigbee2mqtt.io/guide/installation/01_linux.html>`_.
 
    * Be sure to follow the *(Optional) Running as a daemon with systemctl* instructions as well so that Zigbee2MQTT starts up when the gateway does.
+
+#. Once the above is complete, the next step is to add the IP address for the gateway to Flask
