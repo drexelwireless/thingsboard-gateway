@@ -10,7 +10,7 @@ Installation
 1. Install and update Raspbian
 
 .. code-block:: sh
-
+  
   sudo apt-get update
   sudo apt-get upgrade
 
