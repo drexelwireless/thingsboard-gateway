@@ -10,3 +10,4 @@ Here you will find instructions on how to configure each gateway to use a suppor
    zigbee
    wifi
    lora
+   ble
