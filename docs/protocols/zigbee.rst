@@ -50,3 +50,5 @@ Software Setup
             channel: 15
 
 #. Once the above is complete, the next step is to :ref:`add the IP address for the gateway to Flask<add-gateway-ip-address>`
+
+NOTE: Currently, you will have to add the IP address to Flask everytime the device is turned off and on, as it does not store it in memory.

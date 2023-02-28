@@ -10,3 +10,4 @@ Here you will find instructions on how to make changes to Flask Web Portal (VarI
    installation/installation
    project_info/project_structure
    misc/add_gateway_ip
+   misc/add_protocol
