@@ -32,8 +32,14 @@ class CustomSerialUplinkConverter(Converter):
             if self.__config.get(key) is not None:
                 for config_object in self.__config.get(key):
                     data_to_convert = data
+                    tmp = ""
                     if config_object.get('untilDelimiter') is not None:
-                        data_to_convert = data.split(config_object.get('untilDelimiter').encode('UTF-8'))[0]
+                        # data_to_convert = data.split(config_object.get('untilDelimiter').encode('UTF-8'))[1]
+                        # for i in range(31, 35):
+                        #     if data_to_convert[i] != 0:
+                        #         tmp += str(data_to_convert[i])
+                        log.debug("raw data: %s", data_to_convert)
+                    
                     if config_object.get('fromDelimiter') is not None:
                         data_to_convert = data.split(config_object.get('fromDelimiter').encode('UTF-8'))[1]
                     if config_object.get('toByte') is not None:
@@ -46,5 +52,7 @@ class CustomSerialUplinkConverter(Converter):
                         data_to_convert = data_to_convert[from_byte:]
                     converted_data = {config_object['key']: data_to_convert.decode('UTF-8')}
                     self.result_dict[key].append(converted_data)
+                    # converted_data = tmp
+                    # self.result_dict[key].append(converted_data)
         log.debug("Converted data: %s", self.result_dict)
         return self.result_dict

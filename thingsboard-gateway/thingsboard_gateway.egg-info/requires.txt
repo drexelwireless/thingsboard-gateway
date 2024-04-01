@@ -1,0 +1,14 @@
+cryptography
+jsonpath-rw
+regex
+pip
+paho-mqtt
+PyYAML
+simplejson
+requests
+PyInquirer
+pyfiglet
+termcolor
+grpcio<=1.43.0
+protobuf
+cachetools

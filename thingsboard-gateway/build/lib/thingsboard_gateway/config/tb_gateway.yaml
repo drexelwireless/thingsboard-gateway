@@ -1,0 +1,119 @@
+thingsboard:
+  host: variot.ece.drexel.edu
+  port: 1883
+  remoteShell: false
+  remoteConfiguration: false
+  statsSendPeriodInSeconds: 3600
+  minPackSendDelayMS: 0
+  checkConnectorsConfigurationInSeconds: 60
+  handleDeviceRenaming: true
+  checkingDeviceActivity:
+    checkDeviceInactivity: false
+    inactivityTimeoutSeconds: 120
+    inactivityCheckPeriodSeconds: 10
+  security:
+    accessToken: 4smChHUZOuOZZEoThT4v
+  qos: 1
+storage:
+  type: memory
+  read_records_count: 100
+  max_records_count: 100000
+grpc:
+  enabled: false
+  serverPort: 9595
+  keepaliveTimeMs: 10000
+  keepaliveTimeoutMs: 5000
+  keepalivePermitWithoutCalls: true
+  maxPingsWithoutData: 0
+  minTimeBetweenPingsMs: 10000
+  minPingIntervalWithoutDataMs: 5000
+connectors:
+  -
+    name: MQTT Broker Connector
+    type: mqtt
+    configuration: mqtt.json
+
+#  -
+#    name: Modbus Connector
+#    type: modbus
+#    configuration: modbus.json
+#
+#  -
+#    name: Modbus Connector
+#    type: modbus
+#    configuration: modbus_serial.json
+#
+#  -
+#    name: OPC-UA Connector
+#    type: opcua
+#    configuration: opcua.json
+#
+#  -
+#    name: OPC-UA Connector
+#    type: opcua_asyncio
+#    configuration: opcua.json
+#
+#  -
+#    name: BLE Connector
+#    type: ble
+#    configuration: ble.json
+#
+#  -
+#    name: REQUEST Connector
+#    type: request
+#    configuration: request.json
+#
+#  -
+#    name: CAN Connector
+#    type: can
+#    configuration: can.json
+#
+#  -
+#    name: BACnet Connector
+#    type: bacnet
+#    configuration: bacnet.json
+#
+#  -
+#    name: ODBC Connector
+#    type: odbc
+#    configuration: odbc.json
+#
+#  -
+#    name: REST Connector
+#    type: rest
+#    configuration: rest.json
+#
+#  -
+#    name: SNMP Connector
+#    type: snmp
+#    configuration: snmp.json
+#
+#  -
+#    name: FTP Connector
+#    type: ftp
+#    configuration: ftp.json
+#
+#  -
+#    name: Socket TCP/UDP Connector
+#    type: socket
+#    configuration: socket.json
+#
+#  -
+#    name: XMPP Connector
+#    type: xmpp
+#    configuration: xmpp.json
+#
+# ========= Customization ==========
+#
+#
+#  -
+#    name: Custom Serial Connector
+#    type: serial
+#    configuration: custom_serial.json
+#    class: CustomSerialConnector
+#
+#  -
+#    name: GRPC Connector 1
+#    key: auto
+#    type: grpc
+#    configuration: grpc_connector_1.json

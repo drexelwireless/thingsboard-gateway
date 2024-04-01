@@ -189,7 +189,7 @@ class SocketConnector(Connector, Thread):
             if not self.__converting_requests.empty():
                 (address, port), data = self.__converting_requests.get()
 
-                device = self.__devices.get(f'{address}:{port}', None)
+                device = self.__devices.get(f'{address}:{50001}', None)
                 if not device:
                     self.__log.error('Can\'t convert data from %s:%s - not in config file', address, port)
 

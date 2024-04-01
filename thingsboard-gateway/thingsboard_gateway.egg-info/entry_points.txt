@@ -1,0 +1,3 @@
+[console_scripts]
+tb-gateway-configurator = thingsboard_gateway.gateway.configuration_wizard:configure
+thingsboard-gateway = thingsboard_gateway.tb_gateway:daemon

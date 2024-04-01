@@ -62,8 +62,8 @@ class CustomSerialConnector(Thread, Connector):  # Define a connector class, it 
                     while self.__devices[device]["serial"] is None or not self.__devices[device]["serial"].isOpen():  # Try connect
                         # connection to serial port with parameters from configuration file or default
                         device_config = self.__devices[device]["device_config"]
-                        self.__devices[device]["serial"] = serial.Serial(port=device_config.get('port', '/dev/ttyUSB0'),
-                                                                         baudrate=device_config.get('baudrate', 9600),
+                        self.__devices[device]["serial"] = serial.Serial(port=device_config.get('port', '/dev/ttyACM1'),
+                                                                         baudrate=device_config.get('baudrate', 921600),
                                                                          bytesize=device_config.get('bytesize', serial.EIGHTBITS),
                                                                          parity=device_config.get('parity', serial.PARITY_NONE),
                                                                          stopbits=device_config.get('stopbits', serial.STOPBITS_ONE),
@@ -123,6 +123,7 @@ class CustomSerialConnector(Thread, Connector):  # Define a connector class, it 
                     while not self.stopped and received_character != b'\n':  # We will read until receive LF symbol
                         try:
                             received_character = device_serial_port.read(1)  # Read one symbol per time
+                            log.debug("Data: {}\n".format(received_character))
                         except AttributeError as e:
                             if device_serial_port is None:
                                 self.__connect_to_devices()  # if port not found - try to connect to it
